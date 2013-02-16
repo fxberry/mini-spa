@@ -25,6 +25,9 @@
 .content ()
 {
 	margin: 5px;
+	padding: 5px;
+	.rounded-corners(10px);
+	border: 1px solid @textColor;
 }
 
 
@@ -56,21 +59,21 @@ nav
 	{
 		display: block;
 		list-style:none;
-		padding: 0;
-		margin: 0;
+		padding: 5px;
+		margin: 5px;
 
 		li
 		{
 			display: inline;
 			
-
 			a 
 			{
 				.rounded-corners;
 				.default-link;
 				padding: 5px;
-				min-width: 50px;
+				margin: 2px;
 				background: @accentColor;
+				color: white;
 				
 				&:hover 
 				{ 
