@@ -6,6 +6,38 @@
 @headingFont: 'Segoe UI Semibold';
 @contentFont: 'Segoe UI Light';
 
+.rounded-corners (@radius: 5px) 
+{
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.default-link ()
+{
+	text-decoration: none;
+	font-family: @contentFont;
+	color: @textColor;
+}
+
+.content ()
+{
+	margin: 5px;
+}
+
+
+#content-list 
+{
+	.content;
+}
+
+#content-detail 
+{
+	.content;
+}
+
 body
 {
 	font-family: @contentFont; 
@@ -13,8 +45,43 @@ body
 	color: @textColor;
 }
 
+a 
+{
+	.default-link;
+}
 
 nav 
 {
+	ul 
+	{
+		display: block;
+		list-style:none;
+		padding: 0;
+		margin: 0;
 
+		li
+		{
+			display: inline;
+			
+
+			a 
+			{
+				.rounded-corners;
+				.default-link;
+				padding: 5px;
+				min-width: 50px;
+				background: @accentColor;
+				
+				&:hover 
+				{ 
+					background: darken(@accentColor, 20%); 
+					color: @background;
+				}
+
+			}
+
+		}
+	}
+	
 }
+
