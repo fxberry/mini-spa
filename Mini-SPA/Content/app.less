@@ -28,8 +28,8 @@
 	padding: 5px;
 	.rounded-corners(10px);
 	border: 1px solid @textColor;
+	clear: both;
 }
-
 
 #content-list 
 {
@@ -46,6 +46,13 @@ body
 	font-family: @contentFont; 
 	background: @background;
 	color: @textColor;
+}
+
+h1, h2, h3, h4, h5
+{
+	font-family: @headingFont;
+	padding:0;
+	margin:0;
 }
 
 a 
@@ -70,10 +77,13 @@ nav
 			{
 				.rounded-corners;
 				.default-link;
+				display: block;
 				padding: 5px;
 				margin: 2px;
+				width: 50px;
 				background: @accentColor;
 				color: white;
+				float: left;
 				
 				&:hover 
 				{ 
