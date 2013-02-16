@@ -60,10 +60,14 @@ nav ul li a {
   display: block;
   padding: 5px;
   margin: 2px;
-  width: 50px;
+  min-width: 100px;
   background: #ff127a;
   color: white;
-  float: left;
+}
+@media screen and (min-width: 400px) {
+  nav ul li a {
+    float: left;
+  }
 }
 nav ul li a:hover {
   background: #ab004b;
