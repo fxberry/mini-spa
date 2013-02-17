@@ -20,4 +20,4 @@ var config = function() {
 		routes: allRoutes,
 	};
 
-}
+}();

@@ -1,14 +1,14 @@
 ﻿$(document).ready(function() {
 
 	function hideAllContent() {
-		$.each(allRoutes, function (index, value) {
+		$.each(config.routes, function (index, value) {
 			$(value.view).hide();
 		});
 	}
 	
 	var sammy = new Sammy.Application(function() {});
 	
-	$.each(allRoutes, function (index, value) {
+	$.each(config.routes, function (index, value) {
 		sammy.get(value.routePath, function (context) {
 			hideAllContent();
 			$(value.view).show();
@@ -21,7 +21,7 @@
 
 	// startuproute
 	sammy.get('', function () {
-		this.app.runRoute('get', startupUrl);
+		this.app.runRoute('get', config.startupUrl);
 	});
 
 	sammy.run();
