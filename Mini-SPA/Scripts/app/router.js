@@ -23,11 +23,13 @@
 	var sammy = new Sammy.Application(function() {});
 	
 	$.each(allRoutes, function (index, value) {
-		sammy.get(value.routePath, function () {
+		sammy.get(value.routePath, function (context) {
 			hideAllContent();
 			$(value.view).show();
 
-			toastr.info('Routed to: ' + value.routePath, 'Route');
+			context.log('Routed to: ' + value.routePath);
+
+			//toastr.info('Routed to: ' + value.routePath, 'Route');
 		});
 	});
 
