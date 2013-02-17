@@ -1,19 +1,5 @@
 ﻿$(document).ready(function() {
 
-	var startupUrl = '#/list';
-
-	var allRoutes =
-	[
-		{
-			routePath: '#/list',
-			view: '#content-list',
-		},
-		{
-			routePath: '#/detail',
-			view: '#content-detail'
-		}
-	];
-
 	function hideAllContent() {
 		$.each(allRoutes, function (index, value) {
 			$(value.view).hide();
