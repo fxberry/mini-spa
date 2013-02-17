@@ -2,39 +2,48 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width" />
-	<link href="Content/app.css" rel="stylesheet" type="text/css"/>
+	<link href="Content/app.css" rel="stylesheet" type="text/css" />
 	@*<link href="Content/toastr.css" rel="stylesheet" type="text/css"/>*@
-	
+
 	<title>mini spa</title>
 </head>
-	<body>
-		
-		<nav id="navigation">
-			<ul data-bind="foreach: routes">
-				<li>
-					<a data-bind="text: title, attr: { href: routePath }"></a>
-				</li>
-			</ul>
-		</nav>
-		
-		<div id="content-list">
-			<h1>list</h1>
-			Hello from content
-		</div>
-		
-		<div id="content-detail">
-			<h1>detail</h1>
-			Hello from detail
-		</div>
+<body>
 
-		<script src="Scripts/lib/jquery-1.9.1.js"></script>
-		<script src="Scripts/lib/knockout-2.2.1.js"></script>
-		<script src="Scripts/lib/sammy-0.7.4.js"></script>
-		@*<script src="Scripts/lib/toastr.js"></script>*@
-		<script src="Scripts/app/config.js"></script>
-		<script src="Scripts/app/router.js"></script>
-		<script src="Scripts/app/dataservice.js"></script>
-		<script src="Scripts/app/bootstrap.js"></script>
+	<nav id="navigation">
+		<ul data-bind="foreach: routes">
+			<li>
+				<a data-bind="text: title, attr: { href: routePath }"></a>
+			</li>
+		</ul>
+	</nav>
 
-	</body>
+	<div id="content-list">
+		<h1>list</h1>
+		<ul data-bind="foreach: messages, visible: messages.length > 0">
+			<li>
+				<div class="message">
+					<span data-bind="text: subject"></span>
+					<span data-bind="text: body"></span>
+					<input data-bind="checked: isRead" type="checkbox" />
+				</div>
+			</li>
+		</ul>
+		Hello from content
+	</div>
+
+	<div id="content-detail">
+		<h1>detail</h1>
+		Hello from detail
+	</div>
+
+	<script src="Scripts/lib/jquery-1.9.1.js"></script>
+	<script src="Scripts/lib/knockout-2.2.1.js"></script>
+	<script src="Scripts/lib/sammy-0.7.4.js"></script>
+	@*<script src="Scripts/lib/toastr.js"></script>*@
+	<script src="Scripts/app/config.js"></script>
+	<script src="Scripts/app/router.js"></script>
+	<script src="Scripts/app/dataservice.js"></script>
+	<script src="Scripts/app/bootstrap.js"></script>
+
+</body>
 </html>
