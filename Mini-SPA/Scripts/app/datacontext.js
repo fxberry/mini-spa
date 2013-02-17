@@ -6,7 +6,12 @@
 		return $.Deferred(function(def) {
 
 			$.when(
-				dataservice.getMessages()).done(def.resolve()).fail(console.log('asdf'));
+				dataservice.getMessages()).done(
+					function(messages) {
+						def.resolve(messages);
+					}
+
+				).fail(console.log('asdf'));
 
 			//	success: function (dtoList) {
 			//		items = mapToContext(dtoList, items, results, mapper, filter, sortFunction);

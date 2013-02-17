@@ -7,8 +7,9 @@
 	//};
 
 	$.when(datacontext.fetch())
-		.done(
-			ko.applyBindings({ messages: result }, $("#content-list").get(0))
+		.done(function(result) {
+			ko.applyBindings({ messages: result }, $("#content-list").get(0));
+		}
 	);
 
 	//$.when(dataservice.getMessages(alertMessages, function() { console.log('fail getMessages'); }));
