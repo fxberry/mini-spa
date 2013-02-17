@@ -22,13 +22,12 @@
 	
 	var sammy = new Sammy.Application(function() {});
 	
-
 	$.each(allRoutes, function (index, value) {
-		sammy.get(value.routePath, function (context) {
+		sammy.get(value.routePath, function () {
 			hideAllContent();
 			$(value.view).show();
 
-			context.log(value.routePath);
+			toastr.info('Routed to: ' + value.routePath, 'Route');
 		});
 	});
 
