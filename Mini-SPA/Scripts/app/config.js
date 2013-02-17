@@ -6,10 +6,12 @@ var config = function() {
 	var allRoutes =
 	[
 		{
+			title: 'list',
 			routePath: '#/list',
 			view: '#content-list',
 		},
 		{
+			title: 'detail',
 			routePath: '#/detail',
 			view: '#content-detail'
 		}

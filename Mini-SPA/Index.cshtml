@@ -9,13 +9,10 @@
 </head>
 	<body>
 		
-		<nav>
-			<ul>
+		<nav id="navigation">
+			<ul data-bind="foreach: routes">
 				<li>
-					<a href="#/list">list</a>
-				</li>
-				<li>
-					<a href="#/detail">detail</a>
+					<a data-bind="text: title, attr: { href: routePath }"></a>
 				</li>
 			</ul>
 		</nav>
@@ -31,6 +28,7 @@
 		</div>
 
 		<script src="Scripts/lib/jquery-1.9.1.js"></script>
+		<script src="Scripts/lib/knockout-2.2.1.js"></script>
 		<script src="Scripts/lib/sammy-0.7.4.js"></script>
 		@*<script src="Scripts/lib/toastr.js"></script>*@
 		<script src="Scripts/app/config.js"></script>
