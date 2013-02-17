@@ -2,37 +2,41 @@
 
 	var startupUrl = '#/list';
 
-	var allRoutes = [
+	var allRoutes =
+	[
 		{
+			routePath: '#/list',
 			view: '#content-list',
-			
 		},
 		{
+			routePath: '#/detail',
 			view: '#content-detail'
 		}
 	];
 
-	$.each(allRoutes, function (index, value) {
-		$(value).hide();
-	});
-
-	var sammy = new Sammy.Application(function() {
-
-		this.get('#/list', function (context) {
-			context.log('list');
+	function hideAllContent() {
+		$.each(allRoutes, function (index, value) {
+			$(value.view).hide();
 		});
-		
-
-		this.get('#/detail', function (context) {
-			context.log('detail');
-		});
-
-		this.get('', function () {
-			this.app.runRoute('get', startupUrl);
-		});
-		
-	});
+	}
 	
+	var sammy = new Sammy.Application(function() {});
+	
+
+	$.each(allRoutes, function (index, value) {
+		sammy.get(value.routePath, function (context) {
+			hideAllContent();
+			$(value.view).show();
+
+			context.log(value.routePath);
+		});
+	});
+
+	// startuproute
+	sammy.get('', function () {
+		this.app.runRoute('get', startupUrl);
+	});
+
 	sammy.run();
 
 
