@@ -2,6 +2,19 @@
 
 	var startupUrl = '#/list';
 
+	var allRoutes = [
+		{
+			view: '#content-list',
+			
+		},
+		{
+			view: '#content-detail'
+		}
+	];
+
+	$.each(allRoutes, function (index, value) {
+		$(value).hide();
+	});
 
 	var sammy = new Sammy.Application(function() {
 
