@@ -137,6 +137,7 @@
     <Content Include="Scripts\app\datacontext.js" />
     <Content Include="Scripts\app\dataservice.js" />
     <Content Include="Scripts\app\router.js" />
+    <Content Include="Scripts\app\utils.js" />
     <Content Include="Scripts\lib\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\lib\knockout-2.2.1.js" />
     <Content Include="Scripts\lib\jquery-1.9.1.js" />

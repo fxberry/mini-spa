@@ -1,18 +1,18 @@
 ﻿$(document).ready(function () {
 
-	//var alertMessages = function(result) {
-	//	console.log(result);
-
-	//	ko.applyBindings({ messages: result }, $("#content-list").get(0));
-	//};
-
 	$.when(datacontext.fetch())
-		.done(function(result) {
-			ko.applyBindings({ messages: result }, $("#content-list").get(0));
+		.done(function () {
+
+			//var data = {
+			//	messages: ko.observableArray(datacontext.messages.items)
+			//};
+
+			//datacontext.messages.getData({ results: data.messages });
+			//console.log('messages: ' + data.messages.length);
+			ko.applyBindings({ messages: datacontext.messages.items }, $("#content-list").get(0));
 		}
 	);
-
-	//$.when(dataservice.getMessages(alertMessages, function() { console.log('fail getMessages'); }));
+	
 
 	ko.applyBindings(config, $("#navigation").get(0));
 
