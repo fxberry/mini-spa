@@ -19,7 +19,7 @@
 
 	<div id="content-list">
 		<h1>list</h1>
-		<ul data-bind="foreach: messages, visible: messages.length > 0">
+		<ul data-bind="foreach: $data, visible: $data.length > 0">
 			<li>
 				<div class="message">
 					<span data-bind="text: subject"></span>
