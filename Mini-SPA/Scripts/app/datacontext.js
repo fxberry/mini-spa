@@ -1,12 +1,14 @@
 ﻿var datacontext = function () {
 
-	var mapToItems = function (dtoList, items) {
+	var mapToItems = function (dtoList, items, mapper) {
 		$.each(dtoList, function (index, value) {
-			items[index] = value;
+			var id = mapper.getDtoId(value);
+			//mapper.fromDto(value);
+			items[id] = mapper.fromDto(value);
 		});
 	};
 
-	var entitySet = function (getFunction) {
+	var entitySet = function (getFunction, mapper) {
 
 		var items = [],
 
@@ -15,21 +17,22 @@
 
 					var results = options && options.results;
 					if (!items || !utils.hasProperties(items)) {
-					getFunction({
-						success: function (dtoList) {
-							mapToItems(dtoList, items);
-							if (results) {
-								results(items);
+						getFunction({
+							success: function (dtoList) {
+								mapToItems(dtoList, items, mapper);
+								if (results) {
+									results(utils.mapToArray(items));
+								}
+								def.resolve(items);
+							},
+							error: function (response) {
+								def.reject();
 							}
-							def.resolve(items);
-						},
-						error: function (response) {
-							def.reject();
-						}
-					});
+						});
 					} else {
 						if (results) {
-							results(items);
+							var array = utils.mapToArray(items);
+							results(array);
 						}
 					    def.resolve(items);
 					}
@@ -43,7 +46,7 @@
 		};
 	};
 
-	var messages = new entitySet(dataservice.getMessages);
+	var messages = new entitySet(dataservice.getMessages, modelmapper);
 
 	var fetch = function () {
 

@@ -131,11 +131,13 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.cshtml" />
+    <Content Include="Scripts\app\model.message.js" />
     <None Include="Scripts\lib\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\bootstrap.js" />
     <Content Include="Scripts\app\config.js" />
     <Content Include="Scripts\app\datacontext.js" />
     <Content Include="Scripts\app\dataservice.js" />
+    <Content Include="Scripts\app\modelmapper.js" />
     <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\app\utils.js" />
     <Content Include="Scripts\lib\knockout-2.2.1.debug.js" />
