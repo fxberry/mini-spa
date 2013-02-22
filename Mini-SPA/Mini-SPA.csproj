@@ -108,6 +108,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\GlobalConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -133,6 +134,7 @@
     <None Include="Scripts\lib\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\bootstrap.js" />
     <Content Include="Scripts\app\config.js" />
+    <Content Include="Scripts\app\datacontext.js" />
     <Content Include="Scripts\app\dataservice.js" />
     <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\lib\knockout-2.2.1.debug.js" />
