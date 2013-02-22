@@ -9,7 +9,7 @@
   border: 1px solid #222222;
   clear: both;
 }
-#content-detail {
+#content-unread-list {
   margin: 5px;
   padding: 5px;
   -webkit-border-radius: 10px;
@@ -19,6 +19,16 @@
   border-radius: 10px;
   border: 1px solid #222222;
   clear: both;
+}
+.read {
+  text-decoration: line-through;
+}
+.message-body {
+  font-style: italic;
+}
+.message-subject {
+  font-weight: bold;
+  text-transform: uppercase;
 }
 body {
   font-family: 'Segoe UI Light';
