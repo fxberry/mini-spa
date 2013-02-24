@@ -30,15 +30,18 @@
 		</ul>
 	</div>
 
-	<div id="content-unread-list">
-		<ul data-bind="foreach: $data, visible: $data.length > 0">
-			<li>
-				<div>
-					<span class="message-subject" data-bind="text: subject"></span>
-					<span class="message-body" data-bind="text: body"></span>
-				</div>
-			</li>
-		</ul>
+	<div id="content-search">
+		<input data-bind="value: filter, valueUpdate: 'afterkeydown'" />
+		<div data-binding="with: messages">
+			<ul data-bind="foreach: $data, visible: $data.length > 0">
+				<li>
+					<div>
+						<span class="message-subject" data-bind="text: subject"></span>
+						<span class="message-body" data-bind="text: body"></span>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 
 	<script src="Scripts/lib/jquery-1.9.1.js"></script>
@@ -52,7 +55,9 @@
 	<script src="Scripts/app/router.js"></script>
 	<script src="Scripts/app/dataservice.js"></script>
 	<script src="Scripts/app/datacontext.js"></script>
+	<script src="Scripts/app/vm.search.js"></script>
 	<script src="Scripts/app/vm.contentlist.js"></script>
+	
 	<script src="Scripts/app/binder.js"></script>
 	<script src="Scripts/app/bootstrap.js"></script>
 

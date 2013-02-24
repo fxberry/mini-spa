@@ -131,7 +131,9 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Index.cshtml" />
+    <Content Include="Scripts\app\binder.js" />
     <Content Include="Scripts\app\model.message.js" />
+    <Content Include="Scripts\app\vm.contentlist.js" />
     <None Include="Scripts\lib\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\bootstrap.js" />
     <Content Include="Scripts\app\config.js" />
@@ -140,6 +142,7 @@
     <Content Include="Scripts\app\modelmapper.js" />
     <Content Include="Scripts\app\router.js" />
     <Content Include="Scripts\app\utils.js" />
+    <Content Include="Scripts\app\vm.search.js" />
     <Content Include="Scripts\lib\knockout-2.2.1.debug.js" />
     <Content Include="Scripts\lib\knockout-2.2.1.js" />
     <Content Include="Scripts\lib\jquery-1.9.1.js" />
@@ -164,7 +167,9 @@
     <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

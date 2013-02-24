@@ -4,9 +4,11 @@
     	.done(function () {
 
     		vmContentList.init();
+    		//vmSearch.init();
 
     		binder.bind();
 
+    		
     		//var data = {
     		//	messages: ko.observableArray()
     		//};

@@ -11,9 +11,9 @@ var config = function() {
 			view: '#content-list',
 		},
 		{
-			title: 'unread',
-			routePath: '#/unread',
-			view: '#content-unread-list'
+			title: 'search',
+			routePath: '#/search',
+			view: '#content-search'
 		}
 	];
 
