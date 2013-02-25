@@ -19,7 +19,7 @@
 
 	<div id="content-list">
 		<h1>list</h1>
-		<ul data-bind="foreach: $data, visible: $data.length > 0">
+		<ul data-bind="foreach: messages, visible: messages().length > 0">
 			<li>
 				<div data-bind="css: { read: isRead }">
 					<input data-bind="checked: isRead" type="checkbox" />
@@ -32,22 +32,19 @@
 
 	<div id="content-search">
 		<input data-bind="value: filter, valueUpdate: 'afterkeydown'" />
-		<div data-binding="with: messages">
-			<ul data-bind="foreach: $data, visible: $data.length > 0">
-				<li>
-					<div>
-						<span class="message-subject" data-bind="text: subject"></span>
-						<span class="message-body" data-bind="text: body"></span>
-					</div>
-				</li>
-			</ul>
-		</div>
+		<ul data-bind="foreach: messages, visible: messages().length > 0">
+			<li>
+				<div>
+					<span class="message-subject" data-bind="text: subject"></span>
+					<span class="message-body" data-bind="text: body"></span>
+				</div>
+			</li>
+		</ul>
 	</div>
 
 	<script src="Scripts/lib/jquery-1.9.1.js"></script>
 	<script src="Scripts/lib/knockout-2.2.1.debug.js"></script>
 	<script src="Scripts/lib/sammy-0.7.4.js"></script>
-	@*<script src="Scripts/lib/toastr.js"></script>*@
 	<script src="Scripts/app/config.js"></script>
 	<script src="Scripts/app/utils.js"></script>
 	<script src="Scripts/app/model.message.js"></script>

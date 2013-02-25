@@ -12,10 +12,10 @@
 		if (!filterText) {
 			return messages();
 		} else {
-			return messages();
-			//return ko.utils.arrayFilter(messages(), function (message) {
-			//	return ko.utils.stringStartsWith(message.subject(), filterText);
-			//});
+			
+			return ko.utils.arrayFilter(messages(), function (message) {
+				return ko.utils.stringStartsWith(message.subject().toLowerCase(), filterText.toLowerCase());
+			});
 		}
 	});
 
