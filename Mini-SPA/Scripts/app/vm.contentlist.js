@@ -1,14 +1,18 @@
-﻿var vmContentList = function() {
+﻿define('vm.contentlist',
+	['ko', 'datacontext'],
+	function (ko, datacontext) {
 
-	var messages = ko.observableArray();
-	
-	var init = function() {
-		datacontext.messages.getData({ results: messages });
-	};
+		var messages = ko.observableArray();
 
-	return {
-		init: init,
-		messages: messages
-	};
+		var init = function () {
+			datacontext.messages.getData({ results: messages });
+		};
 
-}();
+		init();
+
+		return {
+			init: init,
+			messages: messages
+		};
+
+	});

@@ -1,25 +1,26 @@
-﻿
-var config = function() {
+﻿define('config',
+	[],
+	function () {
 
-	var startupUrl = '#/list';
+		var startupUrl = '#/list';
 
-	var allRoutes =
-	[
-		{
-			title: 'list',
-			routePath: '#/list',
-			view: '#content-list',
-		},
-		{
-			title: 'search',
-			routePath: '#/search',
-			view: '#content-search'
-		}
-	];
+		var allRoutes =
+		[
+			{
+				title: 'list',
+				routePath: '#/list',
+				view: '#content-list',
+			},
+			{
+				title: 'search',
+				routePath: '#/search',
+				view: '#content-search'
+			}
+		];
 
-	return {
-		startupUrl: startupUrl,
-		routes: allRoutes,
-	};
+		return {
+			startupUrl: startupUrl,
+			routes: allRoutes,
+		};
 
-}();
+	});

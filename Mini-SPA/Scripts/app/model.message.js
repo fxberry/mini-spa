@@ -1,14 +1,16 @@
-﻿var MessageModel = function () {
+﻿define('model.message',
+	['ko'],
+	function(ko) {
 
-	//var message = function () {
-		var self = this;
-		self.id = ko.observable();
-		self.subject = ko.observable();
-		self.body = ko.observable();
-		self.isRead = ko.observable();
-		
-		return self;
-	//};
+		var Message = function() {
+			var self = this;
+			self.id = ko.observable();
+			self.subject = ko.observable();
+			self.body = ko.observable();
+			self.isRead = ko.observable();
 
-	//return message;
-}
+			return self;
+		};
+
+		return Message;
+	});

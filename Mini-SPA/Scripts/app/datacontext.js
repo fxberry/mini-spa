@@ -1,77 +1,79 @@
-﻿var datacontext = function () {
+﻿define('datacontext',
+    ['jquery', 'dataservice', 'modelmapper', 'utils'],
+    function ($, dataservice, modelmapper, utils) {
 
-	var mapToItems = function (dtoList, items, mapper) {
-		$.each(dtoList, function (index, value) {
-			var id = mapper.getDtoId(value);
-			//mapper.fromDto(value);
-			items[id] = mapper.fromDto(value);
-		});
-	};
+    	var mapToItems = function (dtoList, items, mapper) {
+    		$.each(dtoList, function (index, value) {
+    			var id = mapper.getDtoId(value);
+    			//mapper.fromDto(value);
+    			items[id] = mapper.fromDto(value);
+    		});
+    	};
 
-	var entitySet = function (getFunction, mapper) {
+    	var entitySet = function (getFunction, mapper) {
 
-		var items = [],
+    		var items = [],
 
-			getData = function (options) {
-				return $.Deferred(function (def) {
+				getData = function (options) {
+					return $.Deferred(function (def) {
 
-					var results = options && options.results;
-					if (!items || !utils.hasProperties(items)) {
-						getFunction({
-							success: function (dtoList) {
-								mapToItems(dtoList, items, mapper);
-								if (results) {
-									results(utils.mapToArray(items));
+						var results = options && options.results;
+						if (!items || !utils.hasProperties(items)) {
+							getFunction({
+								success: function (dtoList) {
+									mapToItems(dtoList, items, mapper);
+									if (results) {
+										results(utils.mapToArray(items));
+									}
+									def.resolve(items);
+								},
+								error: function (response) {
+									def.reject();
 								}
-								def.resolve(items);
-							},
-							error: function (response) {
-								def.reject();
+							});
+						} else {
+							if (results) {
+								var array = utils.mapToArray(items);
+								results(array);
 							}
-						});
-					} else {
-						if (results) {
-							var array = utils.mapToArray(items);
-							results(array);
+							def.resolve(items);
 						}
-					    def.resolve(items);
-					}
 
-				}).promise();
-			};
+					}).promise();
+				};
 
-		return {
-			getData: getData,
-			items: items
-		};
-	};
+    		return {
+    			getData: getData,
+    			items: items
+    		};
+    	};
 
-	var messages = new entitySet(dataservice.getMessages, modelmapper);
+    	var messages = new entitySet(dataservice.getMessages, modelmapper);
 
-	var fetch = function () {
+    	var fetch = function () {
 
-		return $.Deferred(function(def) {
+    		return $.Deferred(function (def) {
 
-			$.when(messages.getData())
-				.done(
-					function () {
-						console.log('in fetch before resolve');
-						def.resolve();
-					})
-				.fail(
-					function () {
-						console.log('in fetch before reject');
-						def.reject();
-					});
+    			$.when(messages.getData())
+					.done(
+						function () {
+							console.log('in fetch before resolve');
+							def.resolve();
+						})
+					.fail(
+						function () {
+							console.log('in fetch before reject');
+							def.reject();
+						});
 
-		}).promise();
+    		}).promise();
 
-	};
+    	};
 
-	return {
-		fetch: fetch,
-		messages: messages
-	};
+    	return {
+    		fetch: fetch,
+    		messages: messages
+    	};
 
 
-}();
+    });

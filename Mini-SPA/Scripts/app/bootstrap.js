@@ -1,27 +1,19 @@
-﻿$(document).ready(function () {
+﻿define('bootstrap',
+	['jquery', 'config', 'binder', 'datacontext', 'router'],
+	function ($, config, binder, datacontext, router) {
 
-    $.when(datacontext.fetch())
-    	.done(function () {
+		var run = function() {
+			$.when(datacontext.fetch())
+				.done(function () {
+					binder.bind();
+				});
 
-    		vmContentList.init();
-    		//vmSearch.init();
+			router.registerRouter(config.routes);
+			router.setStartupRouteAndRun(config.startupUrl);
+		};
 
-    		binder.bind();
+		return {
+			run: run
+		};
 
-    		
-    		//var data = {
-    		//	messages: ko.observableArray()
-    		//};
-			
-    		//datacontext.messages.getData({ results: data.messages });
-
-    		
-    	}
-    );
-	
-	//ko.applyBindings(config, $("#navigation").get(0));
-
-	router.registerRouter(config.routes);
-	router.setStartupRouteAndRun(config.startupUrl);
-
-});
+	});

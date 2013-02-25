@@ -163,6 +163,7 @@
     <Content Include="Scripts\lib\sammy-0.7.4.min.js" />
     <Content Include="Scripts\lib\r.js" />
     <Content Include="Scripts\lib\require.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

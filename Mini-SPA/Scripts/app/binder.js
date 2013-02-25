@@ -1,4 +1,6 @@
-﻿var binder = function() {
+﻿define('binder',
+	['jquery', 'ko', 'config', 'vm.contentlist', 'vm.search'],
+	function ($, ko, config, vmContentList, vmSearch) {
 
 	var bind = function() {
 		ko.applyBindings(vmContentList, $("#content-list").get(0));
@@ -10,4 +12,4 @@
 		bind: bind
 	};
 
-}();
+});
