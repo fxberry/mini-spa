@@ -1,0 +1,23 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example Test Runner</title>
+	<link rel="stylesheet" href="qunit/qunit.css" />
+
+
+
+</head>
+<body>
+	@Scripts.Render("~/bundles/jquery")
+
+	<!-- QUnit includes -->
+	<script src="qunit/qunit.js"></script>
+
+	@Scripts.Render("~/bundles/jsextlibs")
+
+	 <script src="../Scripts/lib/require.js" data-main="testsuite.js"></script>
+
+	<div id="qunit"></div>
+</body>
+</html>

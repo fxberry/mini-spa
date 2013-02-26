@@ -137,6 +137,7 @@
     <Content Include="Content\app.min.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
+    <Content Include="Tests\qunit\qunit.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="Global.asax" />
@@ -164,6 +165,10 @@
     <Content Include="Scripts\lib\r.js" />
     <Content Include="Scripts\lib\require.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Tests\qunit\qunit.js" />
+    <None Include="Tests\TestRunner.cshtml" />
+    <Content Include="Tests\testsuite.js" />
+    <Content Include="Tests\vm.search.tests.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
