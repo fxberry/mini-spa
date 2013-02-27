@@ -5,7 +5,7 @@
 
 	var root = this;
 
-	requirejs.config(
+	require.config(
         {
         	// Let require.js load all app/custom modules asynchronously as needed.
         	// They are all in this folder.

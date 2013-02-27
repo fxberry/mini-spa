@@ -3,7 +3,7 @@
     function ($) {
 
 
-    	var messagesUrl = 'api/Messages';
+    	var messagesUrl = '/api/Messages';
 
     	var getMessages = function (callbacks) {
 
